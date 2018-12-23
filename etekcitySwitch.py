@@ -42,7 +42,7 @@ switchName = "EXAMPLE_NAME"
 
 #The switch ID is referred to as "UUID" in the API calls, and can be retrieved by using option 5 to dump a list of all your devices to a text file.
 #The UUID HAS A FORMAT SUCH AS XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-switchID = "ENTER_SWITCH_CID_VALUE_HERE"
+switchID = "ENTER_SWITCH_UUID_VALUE_HERE"
 
 #Creates empty token and accountid variables which are automatically filled when script runs as long as username and password entered above.
 token = ""
