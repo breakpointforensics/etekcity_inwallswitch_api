@@ -2,20 +2,33 @@
 Python API Script to make direct API calls to Etekcity / VeSync Cloud for WiFi In-Wall Smart Switch
 
 Requirements:
+
   Python 3
+  
   Python "Requests" Module (https://pypi.org/project/requests/)
+  
   Etekcity Wifi Light Switch (https://www.etekcity.com/product/100323)
+  
  
 Use:
  -Download etekcitySwitch.py
+ 
  -Edit script and enter your unique values for:
-    --Username
-    --Password
+ 
+    --USERNAME
+    
+    --PASSWORD
+    
     --mobileID (Optional, see comments in File)
-    --SwitchID
-    --SwitchName
+    
+    --switchID
+    
+    --switchName
   
  -Run script
+ 
+ Script also generates and maintains a logfile in same directory.
+ 
  
  Script provides 5 basic options at this time:
     Example Run:
@@ -34,7 +47,7 @@ Use:
         Please enter switch command, or 'q' to exit:
  
  
- Function Desciption:
+ Function Description:
  
  T. Set Automatic Shutoff Timer
  
