@@ -19,6 +19,7 @@ Use:
  
  Script provides 5 basic options at this time:
     Example Run:
+    
         Welcome to etekcitySwitch.py 1.0
         =======================
         Enter Choice (T,1,2,3,4,5)
