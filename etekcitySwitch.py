@@ -115,7 +115,7 @@ class VesyncApi:
         global token
         global accountID        
         #Sends Json Payload to Turn On Switch
-        payload = {'accountID':'1311695','token':token,'timeZone':'America/Phoenix','uuid':id,'status':'on'}
+        payload = {'accountID':accountID,'token':token,'timeZone':'America/Phoenix','uuid':id,'status':'on'}
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
         r = requests.put(BASE_URL + '/inwallswitch/v1/device/devicestatus/',headers=headers, json=payload)
         logging.info(switchName + " on command manually sent")
@@ -123,7 +123,7 @@ class VesyncApi:
         time.sleep(5)
         
         #Sends a details payload to refresh the new switch status.
-        payload = {'accountID':'1311695','token':token,'timeZone':'America/Phoenix','uuid':id,'mobileId':mobileID}
+        payload = {'accountID':accountID,'token':token,'timeZone':'America/Phoenix','uuid':id,'mobileId':mobileID}
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
         #Get Json response and parse only for on-off state
         r = requests.post(BASE_URL + '/inwallswitch/v1/device/devicedetail/',headers=headers, json=payload).json().get('deviceStatus')
@@ -135,7 +135,7 @@ class VesyncApi:
     def turn_off(self, id):
         global token
         global accountID        
-        payload = {'accountID':'1311695','token':token,'timeZone':'America/Phoenix','uuid':id,'status':'off'}
+        payload = {'accountID':accountID,'token':token,'timeZone':'America/Phoenix','uuid':id,'status':'off'}
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
         r = requests.put(BASE_URL + '/inwallswitch/v1/device/devicestatus/',headers=headers, json=payload)
         logging.info(switchName + " off command manually sent")
@@ -143,7 +143,7 @@ class VesyncApi:
         time.sleep(5)
         
         #Sends a details payload to refresh the new switch status.
-        payload = {'accountID':'1311695','token':token,'timeZone':'America/Phoenix','uuid':id,'mobileId':mobileID}
+        payload = {'accountID':accountID,'token':token,'timeZone':'America/Phoenix','uuid':id,'mobileId':mobileID}
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
         #Get Json response and parse only for on-off state
         r = requests.post(BASE_URL + '/inwallswitch/v1/device/devicedetail/',headers=headers, json=payload).json().get('deviceStatus')
@@ -181,13 +181,13 @@ class VesyncApi:
                     print (st + " Switch left on to long. Shutting off...")
                     logging.info(switchName + " left on to long. Shutting off...")
                     #Sends Json Payload to Turn Off Switch
-                    payload = {'accountID':'1311695','token':token,'timeZone':'America/Phoenix','uuid':id,'status':'off'}
+                    payload = {'accountID':accountID,'token':token,'timeZone':'America/Phoenix','uuid':id,'status':'off'}
                     headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
                     r = requests.put(BASE_URL + '/inwallswitch/v1/device/devicestatus/',headers=headers, json=payload)                    
                     #Pause for 5 seconds to allow cloud server to update status
                     time.sleep(5)
                     #Sends a details payload to refresh the new switch status.
-                    payload = {'accountID':'1311695','token':token,'timeZone':'America/Phoenix','uuid':id,'mobileId':mobileID}
+                    payload = {'accountID':accountID,'token':token,'timeZone':'America/Phoenix','uuid':id,'mobileId':mobileID}
                     headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
                     #Get Json response and parse only for on-off state
                     r = requests.post(BASE_URL + '/inwallswitch/v1/device/devicedetail/',headers=headers, json=payload).json().get('deviceStatus')
